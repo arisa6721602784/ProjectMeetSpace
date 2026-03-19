@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_meetspace_db
+
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: meetspacedb
+    ports:
+      - "8800:3306"
+    volumes:
+      - mysql_data_meetspace:/var/lib/mysql
+    networks:
+      - meetspace_net
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_meetspace
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+      UPLOAD_LIMIT: 64M
+    ports:
+      - "8801:80"
+    depends_on:
+      - db
+    networks:
+      - meetspace_net
+    restart: always
+
+networks:
+  meetspace_net:
+    driver: bridge
+
+volumes:
+  mysql_data_meetspace:
+    driver: local
