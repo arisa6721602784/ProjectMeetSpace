@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetSpace | Available Rooms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="dashboard-body">
+    <nav class="navbar">
+        <div class="brand"><h2>Meet<span>Space</span></h2></div>
+        <div class="user-menu">
+            <span id="userNameDisplay">ยินดีต้อนรับ, กำลังโหลด...</span>
+            <a href="../bookings/bookings.html" class="btn-outline" style="text-decoration: none; margin-right: 10px;">ประวัติการจอง</a>
+            <button id="logoutBtn" class="btn-outline">ออกจากระบบ</button>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="page-header">
+            <h2>ห้องประชุมที่พร้อมให้บริการ</h2>
+            <p>เลือกห้องประชุมที่เหมาะกับความต้องการของคุณ</p>
+        </div>
+        <div id="roomsContainer" class="rooms-grid"></div>
+    </main>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>ระบุเวลาจองห้องประชุม</h3>
+            <form id="bookingForm">
+                <input type="hidden" id="bookRoomId">
+                <div class="input-group">
+                    <label for="startTime">เวลาเริ่มเข้าใช้</label>
+                    <input type="datetime-local" id="startTime" required>
+                </div>
+                <div class="input-group">
+                    <label for="endTime">เวลาสิ้นสุด</label>
+                    <input type="datetime-local" id="endTime" required>
+                </div>
+                <div id="message" class="message"></div>
+                <button type="submit" class="btn-primary">ยืนยันการจอง</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="./rooms.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetSpace | สมัครสมาชิก</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="brand">
+                <h1>Meet<span>Space</span></h1>
+                <p>สร้างบัญชีใหม่เพื่อเริ่มจองห้องประชุม</p>
+            </div>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label>ชื่อ</label>
+                    <input type="text" id="firstname" placeholder="ชื่อจริงของคุณ" required>
+                </div>
+                <div class="input-group">
+                    <label>นามสกุล</label>
+                    <input type="text" id="lastname" placeholder="นามสกุลของคุณ" required>
+                </div>
+                <div class="input-group">
+                    <label>อีเมล</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="input-group" style="margin-bottom: 25px;">
+                    <label>รหัสผ่าน</label>
+                    <input type="password" id="password" placeholder="อย่างน้อย 6 ตัวอักษร" required minlength="6">
+                </div>
+                <div id="message" class="message"></div>
+                <button type="submit" class="btn-primary">ยืนยันการสมัคร</button>
+            </form>
+            <div style="text-align: center; margin-top: 25px; color: #EACEAA; font-size: 0.9rem;">
+                มีบัญชีอยู่แล้ว?
+                <a href="../index.html" style="color: #D39858; text-decoration: none; font-weight: 600;">
+                    เข้าสู่ระบบที่นี่
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="./register.js"></script>
+</body>
+</html>

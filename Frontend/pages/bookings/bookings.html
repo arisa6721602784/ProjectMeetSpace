@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetSpace | My Bookings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="dashboard-body">
+    <nav class="navbar">
+        <div class="brand"><h2>Meet<span>Space</span></h2></div>
+        <div class="user-menu">
+            <span id="userNameDisplay" style="color: #EACEAA; opacity: 0.9; margin-right: 15px;">ยินดีต้อนรับ...</span>
+            <a href="../rooms/rooms.html" class="btn-outline" style="text-decoration: none; margin-right: 10px;">กลับไปหน้าจองห้อง</a>
+            <button id="logoutBtn" class="btn-outline">ออกจากระบบ</button>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="page-header">
+            <h2>ประวัติการจองของคุณ</h2>
+            <p>รายการห้องประชุมที่คุณได้ทำการจองไว้</p>
+        </div>
+        <div id="message" class="message"></div>
+        <div id="bookingsContainer" class="rooms-grid"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="./bookings.js"></script>
+</body>
+</html>

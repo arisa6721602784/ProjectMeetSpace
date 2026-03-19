@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    /* ใช้สี Balsamico (#150C0C) และ Burnt Coffee (#34150F) */
+    background-color: #150C0C; 
+    background-image: radial-gradient(circle at top right, #34150F, #150C0C);
+    color: #EACEAA; /* สี Champagne */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px; /* ใช้ความกว้างเดิมของคุณ */
+    padding: 20px;
+}
+
+.login-card {
+    /* ปรับพื้นหลังให้ดูหรูด้วย Burnt Coffee โปร่งแสง */
+    background: rgba(52, 21, 15, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(234, 206, 170, 0.2); 
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #EACEAA; /* สี Champagne */
+    letter-spacing: 1px;
+}
+
+/* เน้นคำว่า Space ด้วยสี Whiskey Sour และแสงเงา */
+.brand h1 span {
+    color: #D39858; 
+    text-shadow: 0 0 15px rgba(211, 152, 88, 0.4);
+}
+
+.brand p {
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 15px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #EACEAA; /* สี Champagne */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(21, 12, 12, 0.6); /* สี Balsamico */
+    border: 1px solid rgba(234, 206, 170, 0.3);
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+.input-group input:focus {
+    border-color: #D39858; /* สี Whiskey Sour */
+    box-shadow: 0 0 0 3px rgba(211, 152, 88, 0.15);
+    background: rgba(52, 21, 15, 0.8);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    /* ไล่เฉดสี Honey Garlic ไป Whiskey Sour ตามโค้ดใหม่ */
+    background: linear-gradient(135deg, #85431E, #D39858);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(133, 67, 30, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(133, 67, 30, 0.4);
+    filter: brightness(1.1);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #EACEAA;
+    opacity: 0.6;
+}
+
+.register-link a {
+    color: #D39858; /* สี Whiskey Sour */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    color: #EACEAA;
+    text-shadow: 0 0 10px rgba(234, 206, 170, 0.5);
+}
+
+/* ================= Dashboard Styles ================= */
+.dashboard-body {
+    display: block; 
+    height: auto;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(21, 12, 12, 0.9); /* สี Balsamico เข้มข้น */
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(234, 206, 170, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .brand { margin-bottom: 0; }
+.navbar .brand h2 { font-size: 1.5rem; color: #EACEAA; }
+.navbar .brand h2 span { color: #D39858; }
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-menu span {
+    color: #EACEAA;
+    font-size: 0.9rem;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #D39858;
+    border: 1px solid #D39858;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(211, 152, 88, 0.1);
+    border-color: #EACEAA;
+    color: #EACEAA;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.page-header h2 { color: #FFF; font-size: 2.5rem; font-weight: 600; margin-bottom: 10px; }
+.page-header p { color: #EACEAA; opacity: 0.7; }
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.room-card {
+    background: rgba(52, 21, 15, 0.3); /* สี Burnt Coffee จางๆ */
+    border: 1px solid rgba(234, 206, 170, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    border-color: #D39858;
+}
+
+.room-image {
+    width: 100%;
+    height: 200px;
+    background-color: #150C0C; 
+    border-bottom: 1px solid rgba(234, 206, 170, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EACEAA;
+}
+
+.room-info {
+    padding: 20px;
+}
+
+.room-info h3 { color: #EACEAA; margin-bottom: 10px; font-size: 1.4rem; }
+.room-info p { color: #EACEAA; opacity: 0.7; font-size: 0.9rem; margin-bottom: 15px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.room-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #D39858; /* สี Whiskey Sour */
+    margin-bottom: 20px;
+}
+
+.btn-book {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    color: #D39858;
+    border: 1px solid #D39858;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-book:hover { 
+    background: linear-gradient(135deg, #85431E, #D39858);
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+/* ================= Modal Styles ================= */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 12, 12, 0.9); /* สี Balsamico */
+    backdrop-filter: blur(10px); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #150C0C; /* สี Balsamico */
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #D39858;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h3 {
+    color: #FFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #EACEAA;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover { color: #D39858; }
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* ================= Admin Table Styles ================= */
+.admin-card {
+    background: rgba(52, 21, 15, 0.5); /* สี Burnt Coffee */
+    border: 1px solid rgba(234, 206, 170, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow-x: auto;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+    margin-top: 10px; 
+}
+
+table th { 
+    padding: 16px; 
+    border-bottom: 2px solid #85431E; /* สี Honey Garlic */
+    color: #D39858; 
+    font-weight: 600;
+}
+
+table td { 
+    padding: 16px; 
+    border-bottom: 1px solid rgba(234, 206, 170, 0.05); 
+    color: #FFFFFF !important; 
+    font-size: 0.95rem;
+}
+
+select { 
+    background: #150C0C; 
+    color: #FFF; 
+    border: 1px solid #D39858; 
+    padding: 6px 10px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
+.btn-primary-small { 
+    background: #85431E; /* สี Honey Garlic */
+    color: #FFFFFF; 
+    border: none; 
+    padding: 6px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
+.btn-danger-small { 
+    background: #34150F; /* สี Burnt Coffee */
+    color: #FFFFFF; 
+    border: 1px solid rgba(234, 206, 170, 0.2);
+    padding: 6px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
+.btn-primary-small:hover, .btn-danger-small:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  display: none;
+}
+
+.message.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  display: block;
+}
+
+.message.danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  display: block;
+}

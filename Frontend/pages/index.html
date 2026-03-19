@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetSpace | Exclusive Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="brand">
+                <h1>Meet<span>Space</span></h1>
+                <p style="color: #EACEAA; opacity: 0.8;">Better Meetings Start Here</p>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" placeholder="••••••" minlength="6" required>
+                </div>
+                <div id="message" class="message"></div>
+                <button type="submit" class="btn-primary">เข้าสู่ระบบ</button>
+                <p style="text-align: center; margin-top: 25px; color: #EACEAA; font-size: 0.9rem;">
+                    ยังไม่มีบัญชีใช่ไหม?
+                    <a href="./register/register.html" style="color: #D39858; text-decoration: none; font-weight: 600;">
+                        สมัครสมาชิกเลย!
+                    </a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetSpace | Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="dashboard-body">
+    <nav class="navbar">
+        <div class="brand">
+            <h2>Meet<span>Space</span> <span style="font-size: 1rem; color: #EACEAA; opacity: 0.8;">(Admin)</span></h2>
+        </div>
+        <div class="user-menu">
+            <button id="logoutBtn" class="btn-outline" style="border-color: #D39858; color: #D39858 !important;">ออกจากระบบ</button>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="page-header">
+            <h2>จัดการห้องประชุม</h2>
+            <p>เพิ่ม แก้ไข หรือลบห้องประชุมในระบบ</p>
+            <button class="btn-primary" onclick="openAddRoomModal()" style="margin-top:20px; background: linear-gradient(135deg, #85431E, #D39858); width: auto; padding: 10px 25px; border: none;">+ เพิ่มห้องใหม่</button>
+        </div>
+        <div id="message" class="message"></div>
+        <div class="admin-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>รูปภาพ</th>
+                        <th>ชื่อห้อง</th>
+                        <th>ความจุ</th>
+                        <th>จัดการ</th>
+                    </tr>
+                </thead>
+                <tbody id="adminRoomsTable"></tbody>
+            </table>
+        </div>
+        <div class="page-header" style="margin-top: 50px;">
+            <h2>รายการจองห้องทั้งหมด</h2>
+            <p>ประวัติการจองห้องประชุมทั้งหมดในระบบ</p>
+        </div>
+        <div class="admin-card" style="margin-bottom: 50px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>รหัสจอง</th>
+                        <th>ผู้จอง</th>
+                        <th>ห้องประชุม</th>
+                        <th>วัน-เวลา</th>
+                        <th>สถานะ</th>
+                    </tr>
+                </thead>
+                <tbody id="adminBookingsTable"></tbody>
+            </table>
+        </div>
+    </main>
+    <div id="addRoomModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAddRoomModal()">&times;</span>
+            <h3>เพิ่มห้องประชุมใหม่</h3>
+            <form id="addRoomForm">
+                <div class="input-group"><label>ชื่อห้อง</label><input type="text" id="roomName" required></div>
+                <div class="input-group"><label>รายละเอียด</label><input type="text" id="roomDesc"></div>
+                <div class="input-group"><label>ความจุ (คน)</label><input type="number" id="roomCapacity" required></div>
+                <div class="input-group"><label>รูปภาพ</label><input type="file" id="roomImage" accept="image/*"></div>
+                <div id="messageAdd" class="message"></div>
+                <button type="submit" class="btn-primary">บันทึกข้อมูลห้อง</button>
+            </form>
+        </div>
+    </div>
+    <div id="editRoomModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeEditRoomModal()">&times;</span>
+            <h3>แก้ไขข้อมูลห้องประชุม</h3>
+            <form id="editRoomForm">
+                <input type="hidden" id="editRoomId">
+                <div class="input-group"><label>ชื่อห้อง</label><input type="text" id="editRoomName" required></div>
+                <div class="input-group"><label>รายละเอียด</label><input type="text" id="editRoomDesc"></div>
+                <div class="input-group"><label>ความจุ (คน)</label><input type="number" id="editRoomCapacity" required></div>
+                <div class="input-group"><label>รูปภาพ</label><input type="file" id="editRoomImage" accept="image/*"></div>
+                <div id="messageEdit" class="message"></div>
+                <button type="submit" class="btn-primary">บันทึกการแก้ไข</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="./admin.js"></script>
+</body>
+</html>
